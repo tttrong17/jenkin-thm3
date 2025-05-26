@@ -107,7 +107,7 @@ pipeline {
                 expression { currentBuild.currentResult == null || currentBuild.currentResult == 'SUCCESS' }
             }
             steps {
-                //input message: "Proceed with deployment to Production?"
+                input message: "Proceed with deployment to Production?"
                 sshagent([env.SSH_CREDENTIALS_ID]) {
                   
                      sh """
