@@ -1,110 +1,103 @@
-<?php
-  $title = "Shop Vợt Cầu Lông 2 - Trang chủ";
-?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title><?php echo $title; ?></title>
+  <title>Đồ Ăn Vặt</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
       margin: 0;
       padding: 0;
-      background-color: #f0f4f8;
-      color: #333;
     }
 
     header {
-      background-color: #0275d8;
+      background-color: #ff6f61;
       color: white;
       padding: 20px;
       text-align: center;
     }
 
-    h1, h2 {
-      margin: 0;
-    }
-
-    main {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .product {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      overflow: hidden;
+    .container {
       display: flex;
       flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
     }
 
-    .product img {
-      width: 300px;
-      height: auto;
+    .item {
+      background: white;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .item img {
+      width: 100%;
+      height: 180px;
       object-fit: cover;
     }
 
-    .product-info {
-      flex: 1;
-      padding: 20px;
+    .item h3 {
+      margin: 10px 0 5px;
     }
 
-    .product-info h3 {
-      margin-top: 0;
-      color: #0275d8;
+    .item p {
+      margin: 0 10px 10px;
     }
 
-    footer {
-      background-color: #ddd;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    a {
-      color: #0275d8;
-      text-decoration: none;
+    .price {
+      color: #e67e22;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Danh Sách Đồ Ăn Vặt</h1>
+  </header>
 
-<header>
-  <h1>Shop Vợt Cầu Lông</h1>
-  <p>Chuyên cung cấp vợt chất lượng – chính hãng – giá tốt</p>
-</header>
+  <div class="container">
+    <?php
+      $foods = [
+        [
+          'name' => 'Bánh Tráng Trộn',
+          'desc' => 'Bánh tráng, khô bò, trứng cút, xoài, rau răm...',
+          'price' => '20.000đ',
+          'img' => 'https://i.imgur.com/o8QfHRF.jpg'
+        ],
+        [
+          'name' => 'Xoài Lắc Muối Ớt',
+          'desc' => 'Xoài chua, ngọt, cay hấp dẫn.',
+          'price' => '15.000đ',
+          'img' => 'https://i.imgur.com/3ZCqD3Z.jpg'
+        ],
+        [
+          'name' => 'Khô Gà Lá Chanh',
+          'desc' => 'Gà xé cay, thơm lá chanh.',
+          'price' => '35.000đ',
+          'img' => 'https://i.imgur.com/Cyo7Jmc.jpg'
+        ],
+        [
+          'name' => 'Chân Gà Sả Tắc',
+          'desc' => 'Ngâm chua ngọt, giòn ngon.',
+          'price' => '40.000đ',
+          'img' => 'https://i.imgur.com/FMIbwZk.jpg'
+        ]
+      ];
 
-<main>
-  <h2>Sản phẩm nổi bật</h2>
-
-  <div class="product">
-    <img src="images/axtrox99.jpg" alt="Vợt Yonex Astrox 99 Pro">
-    <div class="product-info">
-      <h3>Yonex Astrox 99 Pro</h3>
-      <p>Vợt công thủ toàn diện, dành cho người chơi nâng cao. Thiết kế đẹp, màu sắc mạnh mẽ.</p>
-      <p><strong>Giá:</strong> 3.990.000₫</p>
-    </div>
+      foreach ($foods as $food) {
+        echo "<div class='item'>";
+        echo "<img src='{$food['img']}' alt='{$food['name']}'>";
+        echo "<h3>{$food['name']}</h3>";
+        echo "<p>{$food['desc']}</p>";
+        echo "<p class='price'>{$food['price']}</p>";
+        echo "</div>";
+      }
+    ?>
   </div>
-
-  <div class="product">
-    <img src="images/turbo.jpg" alt="Vợt Lining Turbo Charging 75">
-    <div class="product-info">
-      <h3>Lining Turbo Charging 75</h3>
-      <p>Vợt nhẹ, linh hoạt, phù hợp với người chơi yêu thích tốc độ và phản xạ nhanh.</p>
-      <p><strong>Giá:</strong> 2.750.000₫</p>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  © 2025 Shop Vợt Cầu Lông | <a href="mailto:sales@shopvot.com">123heheh@gmail.com - hello@gmail.com</a>
-</footer>
-
 </body>
 </html>
