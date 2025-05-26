@@ -1,5 +1,5 @@
 <?php
-  $title = "Shop Vợt Cầu Lông - Trang chủ";
+  $title = "Shop Vợt Cầu Lông 2 - Trang chủ";
 ?>
 <!DOCTYPE html>
 <html lang="vi">
